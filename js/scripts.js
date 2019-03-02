@@ -15,15 +15,36 @@ function closeNav() {
  * Pomodoro
  */
 
-// // update countdown(every 1 second)
-// var interval = setInterval(function(){
-//   var now =
-// }
+var timeInMinutes = 0.5;
+var currentTime = Date.parse(new Date());
+var timeUp = new Date(currentTime + timeInMinutes * 60 * 1000);
+
+function time_remaining(endtime){
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor( (t/1000) % 60 );
+  var minutes = Math.floor( (t/1000/60) % 60 );
+  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+  var days = Math.floor( t/(1000*60*60*24) );
+  console.log(hours + minutes + seconds);
+  return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
+}
+
+function run_clock(id,endtime){
+  var clock = document.getElementById(id);
+  function update_clock(){
+    var t = time_remaining(endtime);
+    clock.innerHTML = 'minutes: '+t.minutes+'<br>seconds: '+t.seconds;
+    if(t.total<=0){ clearInterval(timeinterval); }
+  }
+  update_clock(); // run function once at first to avoid delay
+  var timeinterval = setInterval(update_clock,1000);
+}
+run_clock('clockdiv', timeUp);
 
 // Alert user that it's breaktime
-function breakTime(){
-  alert("Breaktime!");
-}
+// function breakTime(){
+//   alert("Breaktime!");
+// }
 
 
 /** Dog API */
@@ -69,3 +90,35 @@ request.onload = function () {
 
 request.send();
 
+
+/** Dog API */
+// access root div
+
+// $.ajax({
+//     url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+//     dataType: 'JSONP',
+//     jsonpCallback: 'callbackFnc',
+//     type: 'GET',
+//     async: false,
+//     crossDomain: true,
+//     success: function(results){
+//         var title = results.response.title;
+//         var numTweets = results.response.content;
+//         $('#results').append(title + ' said ' + content);
+//     }
+// });
+
+// $.ajax({
+//   type: "POST",
+//   url: "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?",
+//   dataType: 'jsonp',
+//   headers: {'Access-Control-Allow-Origin': 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1'},
+//   success: function(results){
+//     var title = results.response.title;
+//     var numTweets = results.response.content;
+//     $('#results').append(title + ' said ' + content);
+//   },
+//   error: function(xhr, ajaxOptions, thrownError) {
+//      alert("Failed to cancel subscription! Message:" + xhr.statusText);
+//   }
+// });
