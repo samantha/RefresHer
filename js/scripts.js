@@ -11,6 +11,11 @@ function closeNav() {
   document.body.style.backgroundColor = "white";
 }
 
+// // Alert user that it's breaktime
+// window.onload = function breakTime(){
+//   alert("Breaktime!");
+// }
+
 /**
  * Pomodoro
  */
@@ -41,10 +46,10 @@ function run_clock(id,endtime){
 }
 run_clock('clockdiv', timeUp);
 
-// Alert user that it's breaktime
-// function breakTime(){
-//   alert("Breaktime!");
-// }
+// var d = new Date();
+// console.log(d.getHours());
+// document.getElementById('clockdiv').innerHTML = d.getHours();
+// document.getElementById('clockdiv').innerHTML = run_clock('clockdiv', timeUp);
 
 
 /** Dog API */

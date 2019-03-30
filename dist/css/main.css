@@ -18,7 +18,12 @@ body {
 }
 
 body .home{
-  background: #161415 url(../img/background.jpg) no-repeat top center;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    #161415 url(../img/background.jpg) no-repeat top center;
 }
 
 body .study{
@@ -28,26 +33,25 @@ body .study{
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
-
 header {
   position: relative;
   height: 100vh;
   min-height: 500px;
   width: 100%;
-/*  background: #161415 url(../img/background.jpg) no-repeat top center;
-*/  background-size: cover !important;
+  background-size: cover !important;
   -webkit-background-size: cover !important;
   text-align: center;
   overflow: hidden;
 }
 
 /* vertically center banner section */
-/*header:before {
+header:before {
   content: '';
   display: inline-block;
   vertical-align: middle;
   height: 100%;
-}*/
+}
+
 header .banner {
   display: inline-block;
   vertical-align: middle;
@@ -61,7 +65,6 @@ header .banner-text { width: 100%; }
 header .banner-text h1 {
   font: 6vw 'opensans-bold', sans-serif;
   color: #fff;
-  text-shadow: 2px 2px 4px #000000;
   letter-spacing: -2px;
   margin: 0 auto 18px auto;
   text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
@@ -115,49 +118,29 @@ header .social li a {
 }
 header .social li a:hover { color: #6A84A7; }
 
-header .quote p{
+/* scrolldown link */
+header .scrolldown a {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -29px;
   color: #fff;
-  margin: 24px 0;
-  padding-bottom: 15px;
-  font-style: italic;
-  font-size: 30px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
-}
-
-h1 .onto
-{
-  position: relative;
-}
-
-header .counter{
-  background: rgba(211, 211, 211, 0.5);
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header .counter h1{
-
-}
-
-header .music {
   display: block;
- /* vertical-align: middle;*/
-  margin: 0 auto;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  line-height: 42px;
+  color: #fff;
+  border-radius: 100%;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
+header .scrolldown a:hover { color: #6A84A7; }
 
-/*header .music-playlist {
-  position: fixed;
-  bottom: 0;
-}
-*/
+
+
 /* primary navigation
 --------------------------------------------------------------------- */
 #nav-wrap ul, #nav-wrap li, #nav-wrap a {
