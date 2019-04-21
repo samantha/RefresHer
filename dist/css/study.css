@@ -1,0 +1,103 @@
+/*
+=====================================================================
+
+  TOC:
+  a. General Styles
+  b. Pomodoro Timer
+  b. Header Styles
+  c. Footer
+
+===================================================================== */
+
+/* ------------------------------------------------------------------ */
+/* a. General Styles
+/* ------------------------------------------------------------------ */
+
+body{
+  background-image:    url(../img/peace.png);
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: top center;              /* center the image */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* b. Pomodoro Timer
+/* ------------------------------------------------------------------ */
+#container{
+  width:400px;
+  margin:20px auto;
+  padding:20px;
+  text-align:center;
+}
+
+#timer{
+  color: black  ;
+  font-size:50px;
+  margin:10px auto;
+  border : 5px solid black;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  position:relative;
+  background: rgba(211,211,211, 0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor:default;
+}
+
+
+#time{
+  margin-top:70px;
+  z-index : 1;
+  position:relative;
+}
+
+
+/*#filler{
+  background : #ddffcc;
+  height: 0px;
+  width: 200px;
+  position:absolute;
+  bottom:0;
+}*/
+
+#buttons button {
+  background: black;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+  padding:5px;
+  width:90px;
+  margin:10px auto;
+  font-size:14px;
+  height : 50px;
+  border-radius : 50px;
+}
+
+
+/*#buttons button#stop{
+  background : #f00;
+}*/
+
+
+
+/* ------------------------------------------------------------------ */
+/* c. Header Styles
+/* ------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------ */
+/* d. Footer
+/* ------------------------------------------------------------------ */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
